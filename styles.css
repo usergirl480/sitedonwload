@@ -1,0 +1,667 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  color: #f3f4f6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Background */
+.background-image {
+  background-image: url("temple-throne-background.jpg");
+}
+
+.bg-gradient-overlay {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+/* Navigation */
+.nav-bg {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+}
+
+.border-magic {
+  border-color: rgba(245, 158, 11, 0.3);
+  position: relative;
+}
+
+.border-magic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(45deg, transparent, rgba(245, 158, 11, 0.5), transparent);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, #f59e0b, #d97706);
+  color: white;
+  border-color: #fbbf24;
+  box-shadow: 0 10px 25px rgba(245, 158, 11, 0.5);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(to bottom, #fbbf24, #f59e0b);
+  transform: translateY(-2px);
+}
+
+.btn-hero {
+  background: #92400e;
+  color: #fef3c7;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.125rem;
+  border: 4px solid #fcd34d;
+  box-shadow: 0 25px 50px rgba(245, 158, 11, 0.6);
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+  background: #b45309;
+  transform: scale(1.05);
+}
+
+.btn-download {
+  background: #92400e;
+  color: #fef3c7;
+  padding: 1.5rem 4rem;
+  font-size: 1.25rem;
+  border: 4px solid #fcd34d;
+  box-shadow: 0 25px 50px rgba(245, 158, 11, 0.7);
+  margin-bottom: 2rem;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.btn-download:hover {
+  background: #b45309;
+  transform: scale(1.1);
+}
+
+.btn-shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(254, 243, 199, 0.2), transparent);
+  transform: skewX(-12deg) translateX(-100%);
+  transition: transform 0.7s ease;
+}
+
+.btn:hover .btn-shine {
+  transform: skewX(-12deg) translateX(100%);
+}
+
+.btn-border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(254, 243, 199, 0.5);
+  border-radius: 0.5rem;
+}
+
+.btn-corners {
+  position: absolute;
+}
+
+.btn-corners::before,
+.btn-corners::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fcd34d;
+  border-radius: 50%;
+}
+
+.btn-corners::before {
+  top: -4px;
+  left: -4px;
+}
+
+.btn-corners::after {
+  top: -4px;
+  right: -4px;
+}
+
+.btn-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.btn-icon-large {
+  width: 1.75rem;
+  height: 1.75rem;
+  margin-right: 0.75rem;
+  position: relative;
+  z-index: 10;
+}
+
+.btn-text,
+.btn-text-large {
+  position: relative;
+  z-index: 10;
+  letter-spacing: 0.1em;
+}
+
+.btn-text-large {
+  letter-spacing: 0.15em;
+}
+
+/* Hero Section */
+.hero-logo {
+  height: 18rem;
+  width: auto;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: #b45309;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  animation-delay: 0.3s;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  animation-delay: 0.6s;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  animation-delay: 0.9s;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  border: 1px solid;
+}
+
+.badge-amber {
+  background: rgba(245, 158, 11, 0.8);
+  color: #92400e;
+  border-color: rgba(245, 158, 11, 0.3);
+}
+
+.badge-red {
+  background: rgba(239, 68, 68, 0.8);
+  color: #7f1d1d;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.badge-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+/* Download Section */
+.download-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #b45309;
+}
+
+.download-description {
+  font-size: 1.125rem;
+  color: #92400e;
+  margin-bottom: 1rem;
+}
+
+.download-note {
+  color: #b45309;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.requirements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .requirements-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .hero-description {
+    font-size: 1.5rem;
+  }
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 0.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.card-title {
+  color: #fbbf24;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+  color: #fef3c7;
+  font-size: 0.875rem;
+}
+
+.card-content p {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: rgba(251, 191, 36, 0.6);
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes mysticalPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.5));
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.8));
+  }
+}
+
+@keyframes runeGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5), 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.8), 0 0 30px rgba(245, 158, 11, 0.5), 0 0 40px rgba(245, 158, 11, 0.3);
+  }
+}
+
+@keyframes epicEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkleEffect {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translate(-50%, 0);
+  }
+  40%,
+  43% {
+    transform: translate(-50%, -10px);
+  }
+  70% {
+    transform: translate(-50%, -5px);
+  }
+  90% {
+    transform: translate(-50%, -2px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+/* Animation Classes */
+.mystical-pulse {
+  animation: mysticalPulse 3s ease-in-out infinite;
+}
+
+.rune-glow {
+  animation: runeGlow 2s ease-in-out infinite;
+  font-family: "Cinzel", serif;
+}
+
+.epic-entrance {
+  animation: epicEntrance 1s ease-out forwards;
+  opacity: 0;
+}
+
+.sparkle {
+  position: absolute;
+  border-radius: 50%;
+  animation: sparkleEffect 2s ease-in-out infinite;
+}
+
+.sparkle-1 {
+  top: 5rem;
+  left: 5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #f59e0b;
+}
+
+.sparkle-2 {
+  top: 10rem;
+  right: 8rem;
+  width: 1rem;
+  height: 1rem;
+  background: #ef4444;
+  animation-delay: 0.5s;
+}
+
+.sparkle-3 {
+  bottom: 8rem;
+  left: 25%;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: #f59e0b;
+  animation-delay: 1s;
+}
+
+.sparkle-4 {
+  top: 33%;
+  right: 25%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #ef4444;
+  animation-delay: 1.5s;
+}
+
+.sparkle-5 {
+  top: 50%;
+  left: 33%;
+  width: 1rem;
+  height: 1rem;
+  background: #f59e0b;
+  animation-delay: 2s;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+
+.magical-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #fbbf24, transparent);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Utility Classes */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.z-0 {
+  z-index: 0;
+}
+.z-10 {
+  z-index: 10;
+}
+.z-20 {
+  z-index: 20;
+}
+.z-50 {
+  z-index: 50;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.space-x-2 > * + * {
+  margin-left: 0.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-amber-400 {
+  color: #fbbf24;
+}
+
+.text-amber-300 {
+  color: #fcd34d;
+}
+
+.text-amber-500 {
+  color: #f59e0b;
+}
+
+.bg-gray-900 {
+  background-color: #111827;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}

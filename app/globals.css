@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.98 0.02 85); /* #fefce8 - Light amber background */
+  --foreground: oklch(0.35 0.02 220); /* #374151 - Dark gray text */
+  --card: oklch(1 0 0); /* #ffffff - White cards */
+  --card-foreground: oklch(0.35 0.02 220); /* #374151 - Card text */
+  --popover: oklch(1 0 0); /* #ffffff - White popover */
+  --popover-foreground: oklch(0.35 0.02 220); /* #374151 - Popover text */
+  --primary: oklch(0.65 0.15 65); /* #d97706 - Amber primary */
+  --primary-foreground: oklch(1 0 0); /* #ffffff - White text on primary */
+  --secondary: oklch(0.65 0.25 330); /* #ec4899 - Pink accent */
+  --secondary-foreground: oklch(1 0 0); /* #ffffff - White text on secondary */
+  --muted: oklch(0.97 0.01 220); /* #f8fafc - Light muted */
+  --muted-foreground: oklch(0.35 0.02 220); /* #374151 - Muted text */
+  --accent: oklch(0.65 0.25 330); /* #ec4899 - Pink accent */
+  --accent-foreground: oklch(1 0 0); /* #ffffff - White accent text */
+  --destructive: oklch(0.55 0.25 15); /* #be123c - Red destructive */
+  --destructive-foreground: oklch(1 0 0); /* #ffffff - White destructive text */
+  --border: oklch(0.35 0.02 220); /* #374151 - Dark borders */
+  --input: oklch(0.97 0.01 220); /* #f8fafc - Light input */
+  --ring: oklch(0.65 0.15 65); /* #d97706 - Amber focus ring */
+  --chart-1: oklch(0.65 0.25 330); /* #ec4899 - Chart color 1 */
+  --chart-2: oklch(0.65 0.15 65); /* #d97706 - Chart color 2 */
+  --chart-3: oklch(0.35 0.02 220); /* #374151 - Chart color 3 */
+  --chart-4: oklch(0.98 0.02 85); /* #fefce8 - Chart color 4 */
+  --chart-5: oklch(1 0 0); /* #ffffff - Chart color 5 */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.35 0.02 220); /* #374151 - Dark sidebar */
+  --sidebar-foreground: oklch(1 0 0); /* #ffffff - White sidebar text */
+  --sidebar-primary: oklch(0.65 0.15 65); /* #d97706 - Amber sidebar primary */
+  --sidebar-primary-foreground: oklch(1 0 0); /* #ffffff - White sidebar primary text */
+  --sidebar-accent: oklch(0.65 0.25 330); /* #ec4899 - Pink sidebar accent */
+  --sidebar-accent-foreground: oklch(1 0 0); /* #ffffff - White sidebar accent text */
+  --sidebar-border: oklch(0.65 0.15 65); /* #d97706 - Amber sidebar border */
+  --sidebar-ring: oklch(0.65 0.25 330); /* #ec4899 - Pink sidebar ring */
+}
+
+.dark {
+  --background: oklch(0.15 0.02 220); /* Dark background */
+  --foreground: oklch(0.98 0.02 85); /* Light text */
+  --card: oklch(0.2 0.02 220); /* Dark cards */
+  --card-foreground: oklch(0.98 0.02 85); /* Light card text */
+  --popover: oklch(0.2 0.02 220); /* Dark popover */
+  --popover-foreground: oklch(0.98 0.02 85); /* Light popover text */
+  --primary: oklch(0.75 0.15 65); /* Brighter amber for dark mode */
+  --primary-foreground: oklch(0.15 0.02 220); /* Dark text on primary */
+  --secondary: oklch(0.75 0.25 330); /* Brighter pink for dark mode */
+  --secondary-foreground: oklch(0.15 0.02 220); /* Dark text on secondary */
+  --muted: oklch(0.25 0.02 220); /* Dark muted */
+  --muted-foreground: oklch(0.7 0.02 220); /* Light muted text */
+  --accent: oklch(0.75 0.25 330); /* Brighter pink accent */
+  --accent-foreground: oklch(0.15 0.02 220); /* Dark accent text */
+  --destructive: oklch(0.65 0.25 15); /* Brighter red */
+  --destructive-foreground: oklch(1 0 0); /* White destructive text */
+  --border: oklch(0.3 0.02 220); /* Dark borders */
+  --input: oklch(0.25 0.02 220); /* Dark input */
+  --ring: oklch(0.75 0.15 65); /* Bright amber ring */
+  --chart-1: oklch(0.75 0.25 330);
+  --chart-2: oklch(0.75 0.15 65);
+  --chart-3: oklch(0.7 0.02 220);
+  --chart-4: oklch(0.25 0.02 220);
+  --chart-5: oklch(0.2 0.02 220);
+  --sidebar: oklch(0.15 0.02 220);
+  --sidebar-foreground: oklch(0.98 0.02 85);
+  --sidebar-primary: oklch(0.75 0.15 65);
+  --sidebar-primary-foreground: oklch(0.15 0.02 220);
+  --sidebar-accent: oklch(0.75 0.25 330);
+  --sidebar-accent-foreground: oklch(0.15 0.02 220);
+  --sidebar-border: oklch(0.3 0.02 220);
+  --sidebar-ring: oklch(0.75 0.25 330);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations for MMORPG effects */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(217, 119, 6, 0.6);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mystical-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.4), 0 0 40px rgba(217, 119, 6, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(236, 72, 153, 0.8), 0 0 80px rgba(217, 119, 6, 0.4);
+  }
+}
+
+@keyframes magical-particles {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rune-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(217, 119, 6, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(217, 119, 6, 0.8), 0 0 30px rgba(236, 72, 153, 0.6);
+  }
+}
+
+@keyframes epic-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes border-magic {
+  0%,
+  100% {
+    border-color: rgba(217, 119, 6, 0.5);
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.3);
+  }
+  50% {
+    border-color: rgba(236, 72, 153, 0.8);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+  }
+}
+
+@keyframes epic-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.sparkle-effect {
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.mystical-pulse {
+  animation: mystical-pulse 3s ease-in-out infinite;
+}
+
+.magical-particles {
+  animation: magical-particles 8s linear infinite;
+}
+
+.rune-glow {
+  animation: rune-glow 2s ease-in-out infinite;
+}
+
+.epic-entrance {
+  animation: epic-entrance 1s ease-out forwards;
+}
+
+.border-magic {
+  animation: border-magic 2s ease-in-out infinite;
+}
+
+.mystical-bg {
+  background: radial-gradient(circle at 20% 80%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(217, 119, 6, 0.05) 0%, transparent 50%);
+}
+
+.magical-particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: linear-gradient(45deg, #d97706, #ec4899);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.epic-title {
+  background: linear-gradient(135deg, #d97706, #ec4899, #d97706);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: epic-gradient 3s ease-in-out infinite;
+}
